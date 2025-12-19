@@ -3,43 +3,27 @@ public class Sign {
     private String message;
     private int width;
 
-    public Sign(String mess, int wth) {
-        message = mess;
-        width = wth;
+    public Sign(String message, int width) {
+        this.message = message;
+        this.width = width;
     }
 
     public int numberOfLines() {
-        int length = message.length();
-        int count;
-        count = 0;
-        int number = 0;
-        length / width = number;
-        length % width = count;
-        if (count != 0) {
-            number = count + number;
-        }
-        return number;
+        if (message.length() % width != 0)
+            return (int)(message.length() / width) + 1;
+        return message.length() / width;
     }
 
-    public String getLines(String mess, int wth) {
-        int length = mess.length();
-        String final ;
-        final =mess;
-        if (length == 0) {
-            final =null;
-            return final ;
+    public String getLines() {
+        String linedMessage = "";
+        if (message == null ||  linedMessage.equals(message))
+            return null;
+        for (int i = 1; i < numberOfLines(); i++) {
+            if () linedMessage += message.substring((i-1)*width);
+            else linedMessage += message.substring((i-1) * width, width * i) + ";";
+
         }
-        int divided = 0;
-        if (length / number == 0) {
-            divided = (length) / (number - 1)
-        } else {
-            divided = length / number;
-        }
-        String new;
-        for (int i = 0; i <= divided; i++) {
-            new = mess.substring(0, i) + ";";
-        }
+        return linedMessage;
     }
 
-}
 }
