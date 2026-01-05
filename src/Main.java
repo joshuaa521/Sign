@@ -5,18 +5,15 @@ public class Main {
         Sign sign3 = new Sign("ABCDEF", 6);
         Sign sign4 = new Sign("", 4);
         Sign sign5 = new Sign("AB_CD_EF", 2);
-        Sign sign6 = new Sign("ABCDEFGHIJK", 3);
         System.out.println(sign.numberOfLines());
         System.out.println(sign2.numberOfLines());
         System.out.println(sign3.numberOfLines());
         System.out.println(sign4.numberOfLines());
         System.out.println(sign5.numberOfLines());
-        System.out.println(sign6.numberOfLines());
         System.out.println(sign.getLines());
         System.out.println(sign2.getLines());
         System.out.println(sign3.getLines());
         System.out.println(sign4.getLines());
         System.out.println(sign5.getLines());
-        System.out.println(sign6.getLines());
     }
 }
