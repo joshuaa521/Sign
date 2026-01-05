@@ -15,15 +15,18 @@ public class Sign {
     }
 
     public String getLines() {
-        String linedMessage = "";
-        if (message == null ||  linedMessage.equals(message))
+        if (message.length() == 0)
             return null;
-        for (int i = 1; i < numberOfLines(); i++) {
-            if () linedMessage += message.substring((i-1)*width);
-            else linedMessage += message.substring((i-1) * width, width * i) + ";";
 
+        String display = "";
+        for (int i = 0; i < numberOfLines() - 1; i++){
+            display += message.substring(i * width, (i + 1) * width) + ";";
         }
-        return linedMessage;
+        if (message.length() % width == 0)
+            display += message.substring(message.length() - width);
+        else
+            display += message.substring(message.length() - message.length() % width);
+        return display;
     }
 
 }
